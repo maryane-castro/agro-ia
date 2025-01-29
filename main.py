@@ -8,7 +8,7 @@ from classModels.classYOLO import YOLOModel
 
 if __name__ == "__main__":
 
-    image_path = "images/frame_000004_png.rf.2162d5c0f0689d91bf25d39c03f97569.jpg"
+    image_path = "images/depth_280_1712318419_224_030.png"
 
 
     # sam
