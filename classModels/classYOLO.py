@@ -65,3 +65,14 @@ class YOLOModel:
         :param size: Tamanho da figura para plotagem.
         """
         sv.plot_image(image, size=size)
+    
+    def save_annotated_image(self, annotated_image, save_path):
+        """
+        Salva a imagem anotada em um caminho especificado.
+
+        :param annotated_image: A imagem anotada a ser salva.
+        :param save_path: O caminho onde a imagem será salva.
+        """
+        annotated_image_pil = Image.fromarray(annotated_image)  # Converte de numpy para PIL
+        annotated_image_pil.save(save_path)
+        print(f"Imagem salva em: {save_path}")

@@ -1,0 +1,502 @@
+[
+    {
+        "image": "frame_000056_png.rf.c485bc60beebb0b184b85c3c219ce60f.jpg",
+        "detections": 2,
+        "inference_time": 1.1228888034820557
+    },
+    {
+        "image": "frame_000238_png.rf.fbb2129187df5d1670a88ab1165e25fd.jpg",
+        "detections": 1,
+        "inference_time": 0.04680037498474121
+    },
+    {
+        "image": "frame_000039_png.rf.620e9392f9877fb4f4bdf13327411a0b.jpg",
+        "detections": 1,
+        "inference_time": 0.045975685119628906
+    },
+    {
+        "image": "frame_000351_png.rf.3ec52aa6cd2fd31ed1aeadc0a1b6063a.jpg",
+        "detections": 1,
+        "inference_time": 0.04208660125732422
+    },
+    {
+        "image": "frame_000001_png.rf.435773ba297bf56ecf6bdc54b8382c7a.jpg",
+        "detections": 1,
+        "inference_time": 0.04192185401916504
+    },
+    {
+        "image": "frame_000119_png.rf.46407dd35ffeeabd8ed790b424d625f3.jpg",
+        "detections": 2,
+        "inference_time": 0.044114112854003906
+    },
+    {
+        "image": "frame_000228_png.rf.2778ada7136d204e3444e7e80dc0b8e1.jpg",
+        "detections": 1,
+        "inference_time": 0.04129815101623535
+    },
+    {
+        "image": "frame_000028_png.rf.f04cfe89c920e6552856db4f3e9d28c4.jpg",
+        "detections": 1,
+        "inference_time": 0.04193377494812012
+    },
+    {
+        "image": "frame_000039_png.rf.fb4d6618d9064e3c690ec12a40a2cf47.jpg",
+        "detections": 1,
+        "inference_time": 0.04135251045227051
+    },
+    {
+        "image": "frame_000022_png.rf.27d97a113d150cb83ebcc93356698313.jpg",
+        "detections": 1,
+        "inference_time": 0.03917670249938965
+    },
+    {
+        "image": "frame_000052_png.rf.4f888230ac7a02cbff9b7c654630a727.jpg",
+        "detections": 2,
+        "inference_time": 0.042244911193847656
+    },
+    {
+        "image": "frame_000040_png.rf.f818b119b5a55f178a05412eee5e4a57.jpg",
+        "detections": 1,
+        "inference_time": 0.03894615173339844
+    },
+    {
+        "image": "frame_000273_png.rf.d3732926edd8c1d68b4cad97945ca1d7.jpg",
+        "detections": 1,
+        "inference_time": 0.03999900817871094
+    },
+    {
+        "image": "frame_000182_png.rf.afedc6159b09a91e77d3bcee1592617c.jpg",
+        "detections": 1,
+        "inference_time": 0.03942227363586426
+    },
+    {
+        "image": "frame_000045_png.rf.37d6aaf28bd4e90c9724471ee119645e.jpg",
+        "detections": 1,
+        "inference_time": 0.03999757766723633
+    },
+    {
+        "image": "frame_000254_png.rf.71b089ea04e18af8143d82aef476d5d1.jpg",
+        "detections": 1,
+        "inference_time": 0.03983712196350098
+    },
+    {
+        "image": "frame_000048_png.rf.1477836e8ddcbc3e6c6711d7fe767a22.jpg",
+        "detections": 1,
+        "inference_time": 0.04049849510192871
+    },
+    {
+        "image": "frame_000180_png.rf.34a6307c808b79f86b3dda6480323e03.jpg",
+        "detections": 1,
+        "inference_time": 0.039177656173706055
+    },
+    {
+        "image": "frame_000059_png.rf.abc688c110ae4ad6bb5efc34040223fa.jpg",
+        "detections": 1,
+        "inference_time": 0.03996777534484863
+    },
+    {
+        "image": "frame_000269_png.rf.ff14312a17514229c77bdf3ca8d42e9d.jpg",
+        "detections": 1,
+        "inference_time": 0.039107561111450195
+    },
+    {
+        "image": "frame_000069_png.rf.cde62df39ccecb47598b3560ada02561.jpg",
+        "detections": 1,
+        "inference_time": 0.04014849662780762
+    },
+    {
+        "image": "frame_000377_png.rf.cba18f74666470815c0ec704dc6f1d1e.jpg",
+        "detections": 2,
+        "inference_time": 0.04185223579406738
+    },
+    {
+        "image": "frame_000189_png.rf.524bb987466702deccf2e7295e315666.jpg",
+        "detections": 1,
+        "inference_time": 0.03883481025695801
+    },
+    {
+        "image": "frame_000147_png.rf.3d6a8e82008eda0e75e816d14286a81c.jpg",
+        "detections": 1,
+        "inference_time": 0.03910040855407715
+    },
+    {
+        "image": "frame_000048_png.rf.4282e58d0213c517e11865ae7e00037d.jpg",
+        "detections": 1,
+        "inference_time": 0.03874993324279785
+    },
+    {
+        "image": "frame_000157_png.rf.4a1e31c33f61462885e205eca6e6ac88.jpg",
+        "detections": 1,
+        "inference_time": 0.03920149803161621
+    },
+    {
+        "image": "frame_000024_png.rf.b7408e9fe01de231a40e4f1614e533df.jpg",
+        "detections": 1,
+        "inference_time": 0.040757179260253906
+    },
+    {
+        "image": "frame_000116_png.rf.4ecca1172f914d4192cacb52dc7e2cde.jpg",
+        "detections": 1,
+        "inference_time": 0.040259361267089844
+    },
+    {
+        "image": "frame_000135_png.rf.9aa47afd2cb306488dbbcf4c98e30c44.jpg",
+        "detections": 1,
+        "inference_time": 0.04046130180358887
+    },
+    {
+        "image": "frame_000009_png.rf.95779679c9374a57a92a7614559024bc.jpg",
+        "detections": 1,
+        "inference_time": 0.03962230682373047
+    },
+    {
+        "image": "frame_000322_png.rf.21ddc8cd2adbb8e81bceda1cbdc876c6.jpg",
+        "detections": 2,
+        "inference_time": 0.04145622253417969
+    },
+    {
+        "image": "frame_000344_png.rf.d44d8f57ac1398be64849d788710a6b9.jpg",
+        "detections": 1,
+        "inference_time": 0.03962373733520508
+    },
+    {
+        "image": "frame_000039_png.rf.f8cbc959d388586f10bb4fa8368bc61b.jpg",
+        "detections": 0,
+        "inference_time": 0.03650546073913574
+    },
+    {
+        "image": "frame_000123_png.rf.5548397d57d72cecda0a266c43326239.jpg",
+        "detections": 1,
+        "inference_time": 0.039545536041259766
+    },
+    {
+        "image": "frame_000022_png.rf.3380744815ea8dcd3440205df4ab6cb1.jpg",
+        "detections": 1,
+        "inference_time": 0.03983139991760254
+    },
+    {
+        "image": "frame_000035_png.rf.cb79ad9ca8a042148904806b31975c74.jpg",
+        "detections": 1,
+        "inference_time": 0.039194345474243164
+    },
+    {
+        "image": "frame_000033_png.rf.47bf4cc2a7ecdf121434a846935105dd.jpg",
+        "detections": 1,
+        "inference_time": 0.04004693031311035
+    },
+    {
+        "image": "frame_000036_png.rf.12a2c7f9d3881ccfc4c7abe49ecec3b9.jpg",
+        "detections": 0,
+        "inference_time": 0.03587460517883301
+    },
+    {
+        "image": "frame_000030_png.rf.495f8d50aa457cfc5145b9c46c9664ea.jpg",
+        "detections": 1,
+        "inference_time": 0.04025697708129883
+    },
+    {
+        "image": "frame_000047_png.rf.2db49eac32e3fdfa939564c68630ef65.jpg",
+        "detections": 1,
+        "inference_time": 0.04032325744628906
+    },
+    {
+        "image": "frame_000029_png.rf.d87ff0523ab338a8df1677c20815b4dd.jpg",
+        "detections": 1,
+        "inference_time": 0.03995966911315918
+    },
+    {
+        "image": "frame_000035_png.rf.d263a57e9cd1bd432c97934c51e57c0a.jpg",
+        "detections": 1,
+        "inference_time": 0.04066967964172363
+    },
+    {
+        "image": "frame_000301_png.rf.a226e49339003fe14288e2fd557893ec.jpg",
+        "detections": 1,
+        "inference_time": 0.04044842720031738
+    },
+    {
+        "image": "frame_000053_png.rf.680d139cc4834d8f7d99461fd3fcc099.jpg",
+        "detections": 1,
+        "inference_time": 0.040157318115234375
+    },
+    {
+        "image": "frame_000401_png.rf.3d31f9a7c1c7c4636f6e3357b1405365.jpg",
+        "detections": 1,
+        "inference_time": 0.04001426696777344
+    },
+    {
+        "image": "frame_000048_png.rf.230dc58ea73409cada56c66a6585f45c.jpg",
+        "detections": 1,
+        "inference_time": 0.041533708572387695
+    },
+    {
+        "image": "frame_000005_png.rf.4ab0950523aee91e05243f34d2490e1e.jpg",
+        "detections": 1,
+        "inference_time": 0.03972434997558594
+    },
+    {
+        "image": "frame_000057_png.rf.f5de26ed676e4a22f800ec0c33673aa7.jpg",
+        "detections": 1,
+        "inference_time": 0.03934454917907715
+    },
+    {
+        "image": "frame_000276_png.rf.333a21d80097ba1f16a5305d44da8330.jpg",
+        "detections": 1,
+        "inference_time": 0.0391077995300293
+    },
+    {
+        "image": "frame_000007_png.rf.a6d2e7f09985d5d12e5a46c728cc38ac.jpg",
+        "detections": 1,
+        "inference_time": 0.0388333797454834
+    },
+    {
+        "image": "frame_000034_png.rf.6f129b16ccfb07c8720d8eac3972166a.jpg",
+        "detections": 1,
+        "inference_time": 0.0390169620513916
+    },
+    {
+        "image": "frame_000049_png.rf.8607339aa70456a76c443a3945a30de0.jpg",
+        "detections": 1,
+        "inference_time": 0.040869712829589844
+    },
+    {
+        "image": "frame_000045_png.rf.5d6340020f0e6bf7f83bbf4079ccf745.jpg",
+        "detections": 1,
+        "inference_time": 0.04007387161254883
+    },
+    {
+        "image": "frame_000413_png.rf.12fd9afb29b688ad5c7f5ea609892439.jpg",
+        "detections": 1,
+        "inference_time": 0.040807485580444336
+    },
+    {
+        "image": "frame_000418_png.rf.73e0bba3e28dcc2223891804dcfc92ae.jpg",
+        "detections": 1,
+        "inference_time": 0.04007077217102051
+    },
+    {
+        "image": "frame_000371_png.rf.4fedff552b9619cd696cb1e0339e700e.jpg",
+        "detections": 1,
+        "inference_time": 0.04076218605041504
+    },
+    {
+        "image": "frame_000255_png.rf.83c290e8f95317a86142ab46fcb44081.jpg",
+        "detections": 1,
+        "inference_time": 0.04019880294799805
+    },
+    {
+        "image": "frame_000051_png.rf.3d4925beec89f62e72832b31921b3747.jpg",
+        "detections": 0,
+        "inference_time": 0.03660130500793457
+    },
+    {
+        "image": "frame_000062_png.rf.ebffcc7c3f45ed7f0523351df0144e6e.jpg",
+        "detections": 1,
+        "inference_time": 0.04000091552734375
+    },
+    {
+        "image": "frame_000045_png.rf.1c4d694d82c7c8c002d34cb04940375b.jpg",
+        "detections": 1,
+        "inference_time": 0.0402522087097168
+    },
+    {
+        "image": "frame_000052_png.rf.2b019e7c020cc24dcf473ede32847dae.jpg",
+        "detections": 1,
+        "inference_time": 0.03965497016906738
+    },
+    {
+        "image": "frame_000044_png.rf.725acedc4fec435f30b52cb3c21dc2f3.jpg",
+        "detections": 1,
+        "inference_time": 0.04027295112609863
+    },
+    {
+        "image": "frame_000045_png.rf.0846f20ba353a1cdec314c6023d2764f.jpg",
+        "detections": 2,
+        "inference_time": 0.04170727729797363
+    },
+    {
+        "image": "frame_000405_png.rf.e85fdc1d1e70ad81c8980da98612fcf8.jpg",
+        "detections": 2,
+        "inference_time": 0.041724443435668945
+    },
+    {
+        "image": "frame_000078_png.rf.50e58cd8c84030965cba1b149a5efe4f.jpg",
+        "detections": 2,
+        "inference_time": 0.04195594787597656
+    },
+    {
+        "image": "frame_000023_png.rf.ede11cc3617bfbe330952978a18919a3.jpg",
+        "detections": 1,
+        "inference_time": 0.03894495964050293
+    },
+    {
+        "image": "frame_000099_png.rf.89836bfa9f9b20ee5f8865a1beff89f5.jpg",
+        "detections": 1,
+        "inference_time": 0.03995633125305176
+    },
+    {
+        "image": "frame_000051_png.rf.f0c7e4c85dbc6e242f9837472b28f33e.jpg",
+        "detections": 1,
+        "inference_time": 0.03980684280395508
+    },
+    {
+        "image": "frame_000062_png.rf.7b883e6600369ae44f5b848bb982f185.jpg",
+        "detections": 1,
+        "inference_time": 0.03892350196838379
+    },
+    {
+        "image": "frame_000013_png.rf.48737e63afa2d0f2381b5d1fd66b8070.jpg",
+        "detections": 1,
+        "inference_time": 0.03929257392883301
+    },
+    {
+        "image": "frame_000014_png.rf.810a5a6682a376d93d0a1b627aeb95e8.jpg",
+        "detections": 1,
+        "inference_time": 0.03888249397277832
+    },
+    {
+        "image": "frame_000043_png.rf.ed53f529b9f074b78fe7b4c67af82fb7.jpg",
+        "detections": 0,
+        "inference_time": 0.036508798599243164
+    },
+    {
+        "image": "frame_000438_png.rf.780a7feeed8615fffd3a2d37979a3546.jpg",
+        "detections": 1,
+        "inference_time": 0.03929281234741211
+    },
+    {
+        "image": "frame_000034_png.rf.78dfbf6625dc7738a9138f947ec3c096.jpg",
+        "detections": 1,
+        "inference_time": 0.08402347564697266
+    },
+    {
+        "image": "frame_000065_png.rf.eb4c82d41a9f201cb0952df329fd332d.jpg",
+        "detections": 1,
+        "inference_time": 0.03985428810119629
+    },
+    {
+        "image": "frame_000321_png.rf.7c39e5c660820a8e65f145c1e8cee7e7.jpg",
+        "detections": 1,
+        "inference_time": 0.040396928787231445
+    },
+    {
+        "image": "frame_000029_png.rf.ea9ff9c2f93e259886d02b8b37c1555d.jpg",
+        "detections": 1,
+        "inference_time": 0.04020285606384277
+    },
+    {
+        "image": "frame_000059_png.rf.32296b8c8d458b44d59f346f58b94aeb.jpg",
+        "detections": 1,
+        "inference_time": 0.04026317596435547
+    },
+    {
+        "image": "frame_000279_png.rf.7e8cf38ca0fe452813a82a16b05e5d9a.jpg",
+        "detections": 1,
+        "inference_time": 0.04032182693481445
+    },
+    {
+        "image": "frame_000017_png.rf.2f5744b5f2501e2e997d930d87b1adc1.jpg",
+        "detections": 1,
+        "inference_time": 0.03959918022155762
+    },
+    {
+        "image": "frame_000060_png.rf.ca74a1a5b79a771022deee2f9eb3a8aa.jpg",
+        "detections": 1,
+        "inference_time": 0.04016709327697754
+    },
+    {
+        "image": "frame_000037_png.rf.2082660386a722fae1b29c75b26da452.jpg",
+        "detections": 1,
+        "inference_time": 0.03903651237487793
+    },
+    {
+        "image": "frame_000284_png.rf.6200b94e48525617756d4ca62a2944ad.jpg",
+        "detections": 1,
+        "inference_time": 0.04041695594787598
+    },
+    {
+        "image": "frame_000064_png.rf.cad8cb5dd665f3cef939e2ae3ea22bea.jpg",
+        "detections": 1,
+        "inference_time": 0.03904843330383301
+    },
+    {
+        "image": "frame_000015_png.rf.78f06d2e900f972a9a424041e4be2a75.jpg",
+        "detections": 1,
+        "inference_time": 0.040221214294433594
+    },
+    {
+        "image": "frame_000025_png.rf.f7b86713400d155dface8d4e98284d09.jpg",
+        "detections": 1,
+        "inference_time": 0.039759159088134766
+    },
+    {
+        "image": "frame_000042_png.rf.7743b680a3b27dd78d123c0c9e1e7e4d.jpg",
+        "detections": 1,
+        "inference_time": 0.04012250900268555
+    },
+    {
+        "image": "frame_000205_png.rf.8e00e853362db64b3894906fd4e165f4.jpg",
+        "detections": 1,
+        "inference_time": 0.040212154388427734
+    },
+    {
+        "image": "frame_000053_png.rf.5e9c06ecb6f0993521eaf903f51f90cd.jpg",
+        "detections": 2,
+        "inference_time": 0.04136323928833008
+    },
+    {
+        "image": "frame_000053_png.rf.74fbf83bb817ea2bccbb2438a73c7a73.jpg",
+        "detections": 1,
+        "inference_time": 0.03899741172790527
+    },
+    {
+        "image": "frame_000178_png.rf.9bd43f1572583be291a97e9eaec08d5a.jpg",
+        "detections": 1,
+        "inference_time": 0.039858341217041016
+    },
+    {
+        "image": "frame_000224_png.rf.1aff363f89feb8e0d2f399de1b4790b7.jpg",
+        "detections": 1,
+        "inference_time": 0.03962254524230957
+    },
+    {
+        "image": "frame_000097_png.rf.1b76a78d84f6bbd9b155f5a485c17379.jpg",
+        "detections": 1,
+        "inference_time": 0.0401151180267334
+    },
+    {
+        "image": "frame_000244_png.rf.0d40fd6cbce4ee06de3d73ffa065923a.jpg",
+        "detections": 1,
+        "inference_time": 0.0403447151184082
+    },
+    {
+        "image": "frame_000287_png.rf.3fb9e11fd5e89b3a781faabd4acb47b6.jpg",
+        "detections": 2,
+        "inference_time": 0.04190802574157715
+    },
+    {
+        "image": "frame_000058_png.rf.f55d4bcbdf9cdf12ac7f564427b7d855.jpg",
+        "detections": 0,
+        "inference_time": 0.03579282760620117
+    },
+    {
+        "image": "frame_000012_png.rf.10aadb6077d9341c1dc77c6b05f198ab.jpg",
+        "detections": 1,
+        "inference_time": 0.03920435905456543
+    },
+    {
+        "image": "frame_000055_png.rf.20954d10bbbfefcedafec39994c4c721.jpg",
+        "detections": 1,
+        "inference_time": 0.03874778747558594
+    },
+    {
+        "image": "frame_000168_png.rf.a4b24ae0af5d68642e2ab5bd5b273b93.jpg",
+        "detections": 1,
+        "inference_time": 0.03968358039855957
+    },
+    {
+        "image": "frame_000070_png.rf.1edabea15e9943ddb93e60158da2a26d.jpg",
+        "detections": 1,
+        "inference_time": 0.03985190391540527
+    }
+]

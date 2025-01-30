@@ -12,8 +12,8 @@ if __name__ == "__main__":
 
 
     # sam
-    absolute_path_sam2_checkpoint = "/home/nuvenpreto01/Documentos/Github/sam2-inference/checkpoints/v2/weights/SAM/checkpoint.pt"
-    model_cfg = "configs/sam2.1/sam2.1_hiera_b+.yaml"
+    absolute_path_sam2_checkpoint = "/home/nuvenpreto01/Documentos/Github/agro-ia/checkpoints/checkpoints/v2/weights/SAM/checkpoint.pt"
+    model_cfg = "checkpoints/checkpoints/v2/configs/sam2.1/sam2.1_hiera_b+.yaml"
     sam_model = SAMModel(model_cfg, absolute_path_sam2_checkpoint)
     image, masks = sam_model.generate_masks(image_path)
     print(f"Generated {len(masks)} masks.")
@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     # yolo
     yolo_model = YOLOModel(
-        model_path='checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt',
+        model_path='checkpoints/checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt',
         conf=0.50
     )
     annotated_image, detections_len = yolo_model.predict(image_path)
