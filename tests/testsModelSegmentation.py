@@ -7,7 +7,7 @@ import shutil
 from glob import glob
 from roboflow import Roboflow
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from classModels.classYOLODetection import YOLOInference  # Atualizado para a nova classe
+from classModels.classYOLO import YOLOModel
 
 # Configuração do logging
 log_dir = "logs"
@@ -29,8 +29,8 @@ image_folder = os.path.join(dataset.location, "test", "images")
 output_folder = "output/"
 os.makedirs(output_folder, exist_ok=True)
 
-# Instanciando o modelo YOLO usando a nova classe YOLOInference
-yolo_model = YOLOInference(
+# Instanciando o modelo YOLO
+yolo_model = YOLOModel(
     model_path='checkpoints/checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt',
     conf=0.50
 )
