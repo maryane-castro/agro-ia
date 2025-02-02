@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 class YOLOInference:
-    def __init__(self, model_path, conf=0.25):
+    def __init__(self, model_path, conf=0.5):
         """
         Inicializa o modelo YOLO.
 
@@ -21,7 +21,7 @@ class YOLOInference:
         Faz a predição em uma imagem.
 
         :param image_path: Caminho para a imagem.
-        :return: Imagem anotada com boxes e labels.
+        :return: Imagem anotada, número de detecções e confianças das detecções.
         """
         image = Image.open(image_path)
         if isinstance(image, Image.Image):
@@ -30,11 +30,19 @@ class YOLOInference:
         result = self.model.predict(image, conf=self.conf)[0]
         detections = sv.Detections.from_ultralytics(result)
 
+        # Extrair as confianças corretamente
+        confidences = detections.confidence.tolist() if len(detections) > 0 else []
+
+        # Verificar se confidences é um valor único (int ou float) e converter
+        if isinstance(confidences, (int, float)):
+            confidences = [confidences]  # Garantir que seja uma lista
+
         annotated_image = image.copy()
         annotated_image = self.box_annotator.annotate(annotated_image, detections=detections)
         annotated_image = self.label_annotator.annotate(annotated_image, detections=detections)
 
-        return annotated_image, len(detections)
+        return annotated_image, detections, confidences
+
 
     def plot(self, image, size=(10, 10)):
         """

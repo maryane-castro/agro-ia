@@ -6,39 +6,56 @@ import json
 import shutil
 from glob import glob
 from roboflow import Roboflow
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from classModels.classYOLO import YOLOModel
 
-# Configuração do logging
+
+def delete_existing_file(file_path):
+    if os.path.exists(file_path):
+        os.remove(file_path)
+        print(f"🔴 Arquivo existente removido: {file_path}")
+
+
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
+
+
+log_file = os.path.join(log_dir, "performance_test_seg.log")
+metrics_file = os.path.join(log_dir, "performance_metrics_seg.json")
+
+
+delete_existing_file(log_file)
+delete_existing_file(metrics_file)
+
+
 logging.basicConfig(
-    filename="logs/performance_test.log",
+    filename=log_file,
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
 )
 
-# Carregar o projeto e dataset do Roboflow
+
 rf = Roboflow(api_key="UmrhwHmxixp7hrYrUSIB")
 project = rf.workspace("agroia").project("dataset-v1-s3fwi")
 version = project.version(9)
 dataset = version.download("yolov11")
 
-# Caminho da pasta de imagens
+
 image_folder = os.path.join(dataset.location, "test", "images")  
 output_folder = "output/"
 os.makedirs(output_folder, exist_ok=True)
 
-# Instanciando o modelo YOLO
+
 yolo_model = YOLOModel(
     model_path='checkpoints/checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt',
-    conf=0.50
+    conf=0.80
 )
 
-MAX_IMAGES = 100  # Defina o máximo de imagens a processar
+MAX_IMAGES = 100  
 image_paths = (glob(os.path.join(image_folder, "*.jpg")) + glob(os.path.join(image_folder, "*.png")))[:MAX_IMAGES]
 
-# Verificar se as imagens foram encontradas
+
 print(f"🔎 Imagens encontradas: {len(image_paths)}")
 print(f"🔎 Caminho das imagens: {image_paths}")
 
@@ -49,43 +66,44 @@ for image_path in image_paths:
     start_time = time.time()
 
     try:
-        # Faz a predição
-        annotated_image, detections_len = yolo_model.predict(image_path)
-        inference_time = time.time() - start_time  # Tempo de inferência
         
-        # Salvar a imagem anotada na pasta 'output'
+        annotated_image, detections_len, confidences = yolo_model.predict(image_path)
+        inference_time = time.time() - start_time  
+        
+        
         output_path = os.path.join(output_folder, os.path.basename(image_path))
         
-        # Usar o método save_annotated_image para salvar a imagem
+        
         yolo_model.save_annotated_image(annotated_image, output_path)
 
-        # Log dos resultados
+        
         log_info = {
             "image": os.path.basename(image_path),
             "detections": detections_len,
-            "inference_time": inference_time
+            "inference_time": inference_time,
+            "confidences": confidences
         }
         results.append(log_info)
 
-        logging.info(f"Processed {image_path} | Detections: {detections_len} | Time: {inference_time:.4f}s")
+        logging.info(f"Processed {image_path} | Detections: {detections_len} | Time: {inference_time:.4f}s | Confidences: {confidences}")
 
     except Exception as e:
         logging.error(f"Error processing {image_path}: {str(e)}")
 
-# Verificar se resultados foram preenchidos
+
 print(f"📊 Resultados: {results}")
 
-# Salvar métricas em arquivo JSON
+
 if results:
-    with open(os.path.abspath("logs/performance_metrics.json"), "w") as f:
+    with open(metrics_file, "w") as f:
         json.dump(results, f, indent=4)
 
-print("✅ Processamento concluído. Logs e métricas salvos.")
+print(f"✅ Processamento concluído. Logs e métricas salvos em: {log_file}, {metrics_file}")
 
-# Remover o dataset baixado
+
 print("🗑️ Removendo o dataset baixado...")
 try:
-    shutil.rmtree(dataset.location)  # Remove a pasta do dataset
+    shutil.rmtree(dataset.location)  
     print(f"✅ Dataset removido com sucesso: {dataset.location}")
 except Exception as e:
     print(f"❌ Erro ao remover o dataset: {str(e)}")

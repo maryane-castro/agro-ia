@@ -1,10 +1,7 @@
 import streamlit as st
 import json
-import logging
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
-import plotly.express as px
 
 log_file = "logs/performance_test.log"
 metrics_file = "logs/performance_metrics.json"
@@ -31,12 +28,12 @@ st.title("Análise Avançada de Resultados de Inferência YOLO")
 
 option = st.selectbox(
     "Selecione a visualização:",
-    ("Logs de Processamento", "Métricas de Inferência")
+    ("Métricas de Inferência", "Logs de Processamento")
 )
 
 if option == "Métricas de Inferência":
     st.header("Métricas de Inferência")
-
+    
     metrics = load_metrics()
     
     if metrics:
@@ -44,25 +41,14 @@ if option == "Métricas de Inferência":
         st.subheader("Tabela de Métricas")
         st.dataframe(metrics_df)
 
-        st.sidebar.subheader("Filtros de Métricas")
-        metric_option = st.sidebar.selectbox(
-            "Escolha a métrica para visualização:",
-            ["Tempo de Inferência", "Número de Detecções"]
-        )
+        # Calcular as médias de tempo e confiança
+        avg_inference_time = metrics_df["inference_time"].mean()
+        avg_confidence = metrics_df["confidences"].apply(lambda x: sum(x)/len(x) if x else 0).mean()
 
-        if metric_option == "Tempo de Inferência":
-            st.subheader("Distribuição do Tempo de Inferência")
-            fig = px.histogram(metrics_df, x="inference_time", nbins=30, title="Distribuição do Tempo de Inferência")
-            fig.update_xaxes(title_text="Tempo (segundos)")
-            fig.update_yaxes(title_text="Número de Imagens")
-            st.plotly_chart(fig)
-            
-        elif metric_option == "Número de Detecções":
-            st.subheader("Distribuição do Número de Detecções")
-            fig = px.histogram(metrics_df, x="detections", nbins=30, title="Distribuição do Número de Detecções")
-            fig.update_xaxes(title_text="Número de Detecções")
-            fig.update_yaxes(title_text="Número de Imagens")
-            st.plotly_chart(fig)
+        # Exibir as médias em formato de texto
+        st.subheader("Média das Métricas")
+        st.write(f"**Média do Tempo de Inferência**: {avg_inference_time:.4f} segundos")
+        st.write(f"**Média da Confiança**: {avg_confidence:.4f}")
 
         st.download_button(
             label="Baixar Métricas",
@@ -95,13 +81,3 @@ elif option == "Logs de Processamento":
             file_name="performance_test.log",
             mime="text/plain"
         )
-
-st.sidebar.title("Configurações Avançadas")
-st.sidebar.subheader("Configuração dos Gráficos")
-show_grid = st.sidebar.checkbox("Mostrar grade no gráfico", True)
-
-if option == "Métricas de Inferência":
-    st.sidebar.subheader("Filtro de Data de Processamento")
-    date_filter = st.sidebar.date_input("Escolha a data:", [])
-    if date_filter:
-        st.sidebar.write(f"Filtrando por data: {date_filter}")

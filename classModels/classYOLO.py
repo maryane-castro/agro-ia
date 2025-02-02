@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 class YOLOModel:
-    def __init__(self, model_path, name_dictionary=None, conf=0.25):
+    def __init__(self, model_path, name_dictionary=None, conf=0.5):
         """
         Inicializa o modelo YOLO.
 
@@ -36,7 +36,7 @@ class YOLOModel:
         Faz a predição em uma imagem.
 
         :param image: Imagem no formato PIL ou NumPy.
-        :return: Imagem anotada com máscaras e labels.
+        :return: Imagem anotada com máscaras e labels, número de detecções e as confidências.
         """
 
         image = Image.open(image_path)
@@ -45,9 +45,8 @@ class YOLOModel:
 
         result = self.model.predict(image, conf=self.conf)[0]
         detections = sv.Detections.from_ultralytics(result)
-        #print(len(detections))
+        confidences = detections.confidence.tolist() if len(detections) > 0 else []
 
-        # Renomear classes, se necessário
         if self.name_dictionary:
             detections = self._rename_classes(detections)
 
@@ -55,7 +54,8 @@ class YOLOModel:
         self.mask_annotator.annotate(annotated_image, detections=detections)
         self.label_annotator.annotate(annotated_image, detections=detections)
 
-        return annotated_image, len(detections)
+        return annotated_image, len(detections), confidences
+
 
     def plot(self, image, size=(10, 10)):
         """
