@@ -50,7 +50,7 @@ Para rodar este projeto, clone o repositório e instale as dependências utiliza
 
 Os modelos treinados podem ser baixados diretamente do Google Drive. Acesse o link abaixo para obter os modelos SAM e YOLO:
 
-[Download dos Modelos](https://drive.google.com/drive/folders/15ZvUu4UkY3lcgn3to8BufOWoz-jL-I2a?usp=sharing)
+[Download dos Modelos](https://drive.google.com/drive/folders/1lXxnISwjFu-YpuL-gBkTvSFYo_5dG4T3?usp=sharing)
 
 Após o download, extraia os arquivos na pasta `checkpoints` do repositório.
 
