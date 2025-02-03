@@ -21,8 +21,8 @@ log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 
 
-log_file = os.path.join(log_dir, "performance_test_seg.log")
-metrics_file = os.path.join(log_dir, "performance_metrics_seg.json")
+log_file = os.path.join(log_dir, "performance_test.log")
+metrics_file = os.path.join(log_dir, "performance_metrics.json")
 
 
 delete_existing_file(log_file)

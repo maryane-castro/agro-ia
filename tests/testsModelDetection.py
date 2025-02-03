@@ -22,7 +22,7 @@ log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 
 
-log_file = os.path.join(log_dir, "performance_test_detec.log")
+log_file = os.path.join(log_dir, "performance_test.log")
 
 
 delete_existing_file(log_file)
@@ -95,7 +95,7 @@ for image_path in image_paths:
 
 print(f"📊 Resultados: {results}")
 
-metrics_file = os.path.join(log_dir, "performance_metrics_detec.json")
+metrics_file = os.path.join(log_dir, "performance_metrics.json")
 
 
 delete_existing_file(metrics_file)
