@@ -128,3 +128,42 @@ class SAMModel:
 
 
 
+
+
+    # Função para gerar a imagem anotada com as máscaras sobrepostas para exibição no Gradio
+    def get_annotated_image(self, image_path, min_confidence=0.1):
+        """
+        Gera uma imagem anotada com as máscaras sobrepostas e retorna a imagem para exibição no Gradio.
+
+        :param image_path: Caminho da imagem de entrada.
+        :param min_confidence: O limiar de confiança mínima para exibir as máscaras.
+        :return: A imagem com a máscara sobreposta (no formato PIL).
+        """
+        # Gera as máscaras
+        image, masks = self.generate_masks(image_path)
+        
+        # Se não houver máscaras, retorna a imagem original
+        if len(masks) == 0:
+            print("No masks to display.")
+            return Image.fromarray(image)  # Retorna a imagem original sem alterações
+
+        # Converte a imagem para o formato desejado (PIL)
+        image_pil = Image.fromarray(image)
+        img_overlay = np.array(image_pil)  # Usa a imagem original para sobrepor
+
+        # Escolhe a máscara mais central (com maior confiança)
+        central_mask = max(masks, key=lambda x: x['confidence'])
+        mask = central_mask['segmentation']
+        
+        # Cria uma cor aleatória para a máscara
+        color_mask = np.random.randint(0, 256, 3)  # Cor aleatória em RGB (sem opacidade)
+        
+        # Aplica a máscara à imagem (substitui a área da máscara pela cor da máscara)
+        img_overlay[mask] = color_mask  # Aplica a máscara colorida na posição da máscara
+
+        # Converte a imagem anotada para PIL novamente
+        annotated_image = Image.fromarray(img_overlay)
+
+        return annotated_image
+
+

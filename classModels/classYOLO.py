@@ -39,7 +39,7 @@ class YOLOModel:
         :return: Imagem anotada com máscaras e labels, número de detecções e as confidências.
         """
 
-        image = Image.open(image_path)
+        image = Image.open(image_path).convert("RGB")
         if isinstance(image, Image.Image):
             image = np.array(image)
 
@@ -55,7 +55,6 @@ class YOLOModel:
         self.label_annotator.annotate(annotated_image, detections=detections)
 
         return annotated_image, len(detections), confidences
-
 
     def plot(self, image, size=(10, 10)):
         """
@@ -76,3 +75,16 @@ class YOLOModel:
         annotated_image_pil = Image.fromarray(annotated_image)  # Converte de numpy para PIL
         annotated_image_pil.save(save_path)
         print(f"Imagem salva em: {save_path}")
+
+    def get_annotated_image(self, image_path):
+        """
+        Retorna a imagem anotada para ser exibida no Gradio.
+
+        :param image_path: Caminho da imagem de entrada.
+        :return: Imagem anotada no formato PIL.Image para o Gradio.
+        """
+        # Chama a função predict para processar a imagem
+        annotated_image, _, _ = self.predict(image_path)
+
+        # Converte de NumPy para PIL (se necessário)
+        return Image.fromarray(annotated_image)
