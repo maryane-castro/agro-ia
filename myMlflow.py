@@ -80,7 +80,7 @@ class YOLOModelWrapper(mlflow.pyfunc.PythonModel):
 def log_yolo_model(yolo_model, image_path, model_path):
     # Medindo o tempo de inferência
     start_time = time.time()
-    annotated_image, detections_len = yolo_model.predict(image_path)
+    annotated_image, detections_len, _ = yolo_model.predict(image_path)
     inference_time = time.time() - start_time
 
     # Logar no MLflow
@@ -123,14 +123,14 @@ def log_yolo_model(yolo_model, image_path, model_path):
 
 
 if __name__ == "__main__":
-    sam2_checkpoint = "/home/nuvenpreto01/Documentos/Github/sam2-inference/checkpoints/v2/weights/SAM/checkpoint.pt"
+    sam2_checkpoint = "/home/nuvenpreto01/Documentos/Github/agro-ia/checkpoints/checkpoints/v2/weights/SAM/checkpoint.pt"
     model_cfg = "configs/sam2.1/sam2.1_hiera_b+.yaml"
     sam_model = SAMModel(model_cfg, sam2_checkpoint)
 
     image_path = "images/frame_000004_png.rf.2162d5c0f0689d91bf25d39c03f97569.jpg"
     log_sam_model(sam_model, image_path, model_cfg, sam2_checkpoint)
 
-    model_path = 'checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt'
+    model_path = 'checkpoints/checkpoints/v2/weights/YOLO-MEDIUM/runs/segment/train/weights/best.pt'
     yolo_model = YOLOModel(
         model_path=model_path,
         conf=0.50
