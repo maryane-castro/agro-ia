@@ -1,4 +1,6 @@
+Aqui está o **README** atualizado, incorporando as novas informações de estrutura do projeto e detalhes sobre o repositório:
 
+---
 
 # AGROIA 🚀
 
@@ -9,20 +11,28 @@ Este repositório contém scripts e configurações para treinamento, inferênci
 ## Estrutura do Projeto 📂
 
 ```
-├── checkpoints             # Contém os modelos e pesos salvos durante o treinamento
-│   └── v1
-│   └── v2
+├── bestFrame               # Scripts relacionados à extração de frames e vídeos
+│   ├── bestFramepaste      # Imagens de frames extraídos
+│   ├── bestFrame.py        # Script para análise do melhor frame
+│   ├── getJustVideo.py     # Script para extrair apenas o vídeo
+│   ├── getVideoAndImgs.py  # Script para extrair vídeo e imagens
+│   ├── out_video           # Pasta com vídeos e frames extraídos
+│   └── svos                # Scripts e informações auxiliares
 ├── classModels             # Classes principais para SAM, YOLO e detecção
-│   ├── classSAM.py
-│   ├── classYOLO.py
-│   └── classYOLODetection.py
+│   ├── classSAM.py         # Classe para manipulação do modelo SAM
+│   ├── classYOLODetection.py  # Classe para detecção usando YOLO
+│   ├── classYOLO.py        # Classe para YOLO
 ├── configs                 # Arquivos de configuração dos modelos
 ├── images                  # Imagens de exemplo para inferência
-├── inferenceNotebook       # Notebooks para inferência e métricas de desempenho
+├── install-ZED-SDK         # Scripts para instalação e exemplo de uso do ZED SDK
+│   ├── readme.md           # Documento com instruções de instalação do ZED SDK
+│   └── use-exemple.py      # Exemplo de uso da câmera ZED
 ├── logs                    # Logs de desempenho dos modelos
 ├── main.py                 # Arquivo principal para execução do treinamento
-├── mlflow.py               # Configurações do MLflow
+├── myGradioUI.py           # Interface de usuário com Gradio
+├── myMlflow.py             # Configurações do MLflow
 ├── README.md               # Documentação do projeto
+├── requirements.txt        # Dependências do projeto
 ├── roboflow                # Scripts para download de datasets e pesos
 ├── tests                   # Testes para verificar a funcionalidade dos modelos
 ├── trainModel              # Scripts de treinamento para SAM e YOLO
@@ -44,6 +54,25 @@ Para rodar este projeto, clone o repositório e instale as dependências utiliza
 
    ```bash
    pip install -r requirements.txt
+   ```
+
+## Instalação do ZED SDK 🎥
+
+Se você está utilizando a câmera ZED, siga as instruções para instalar o ZED SDK.
+
+1. **Baixar o SDK**: Acesse [ZED SDK](https://www.stereolabs.com/en-br/developers/release) e faça o download da versão adequada para o seu sistema operacional.
+   
+2. **Instalação no Linux**: Siga os passos de instalação no [Guia de Instalação no Linux](https://www.stereolabs.com/docs/installation/linux).
+
+   - Para instalar o SDK, use o comando:
+     ```bash
+     chmod +x ZED_SDK_Ubuntu22_cuda11.8_v4.0.0.zstd.run
+     ./ZED_SDK_Ubuntu22_cuda11.8_v4.0.0.zstd.run
+     ```
+
+3. **Biblioteca Python**: Após a instalação, instale a biblioteca Python para interagir com a câmera:
+   ```bash
+   pip install pyzed
    ```
 
 ## Download dos Modelos 📥
@@ -79,3 +108,6 @@ As métricas de desempenho dos modelos de detecção e segmentação são salvas
 
 Existem testes para as funções de detecção e segmentação em `tests/testsModelDetection.py` e `tests/testsModelSegmentation.py`, além de um teste para a interface de usuário em `tests/interfaceUI.py`.
 
+---
+
+Agora o README está bem mais completo, com detalhes sobre a estrutura do projeto, incluindo a instalação do ZED SDK, o uso dos scripts e as pastas organizadas do repositório. Você tem mais alguma coisa para adicionar ou alterar? 😊
