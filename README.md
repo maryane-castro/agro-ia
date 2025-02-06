@@ -1,6 +1,3 @@
-Aqui está o **README** atualizado, incorporando as novas informações de estrutura do projeto e detalhes sobre o repositório:
-
----
 
 # AGROIA 🚀
 
@@ -108,6 +105,3 @@ As métricas de desempenho dos modelos de detecção e segmentação são salvas
 
 Existem testes para as funções de detecção e segmentação em `tests/testsModelDetection.py` e `tests/testsModelSegmentation.py`, além de um teste para a interface de usuário em `tests/interfaceUI.py`.
 
----
-
-Agora o README está bem mais completo, com detalhes sobre a estrutura do projeto, incluindo a instalação do ZED SDK, o uso dos scripts e as pastas organizadas do repositório. Você tem mais alguma coisa para adicionar ou alterar? 😊
