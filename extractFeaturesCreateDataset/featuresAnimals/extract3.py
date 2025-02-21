@@ -132,7 +132,6 @@ def extract_animal_features(depth_images, depth_csvs):
 
         #print(masks)
         
-        # Salvar imagem com a máscara e a caixa delimitadora
         image_name = os.path.basename(image_path)
         save_image_with_bbox(img.copy(), masks, image_name)
         
