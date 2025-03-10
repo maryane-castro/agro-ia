@@ -23,5 +23,6 @@ master_features(inputs_paste_pngs="data/processed/melhoresFrames/pngs",
 
 # model regression
 predictor = ModelPredictorRegression('models/weights/best_xgboost_model.pkl', 'models/weights/ensemble_model.pkl')
-predictor.predict('data/processed/datasets/dataset.csv', 'data/previsoes_modelos.csv') 
+predictor.predict(file_path='data/processed/datasets/dataset.csv', 
+                  output_path='data/previsoes_modelos.csv') 
 

@@ -10,10 +10,9 @@ def measure_sharpness(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     return cv2.Laplacian(gray, cv2.CV_64F).var()
 
-def process_frames(inputs_png, inputs_csv, output_base_dir, model_path, dynamic_margin=5):
+def process_frames(inputs_png, inputs_csv, output_base_dir, model_path, dynamic_margin=5, lateral_margin=10):
     model = YOLO(model_path)
     
-    # Lista as subpastas dentro de inputs_png
     subfolders = [f for f in os.listdir(inputs_png) if os.path.isdir(os.path.join(inputs_png, f))]
     
     for svo_name in subfolders:
@@ -55,9 +54,13 @@ def process_frames(inputs_png, inputs_csv, output_base_dir, model_path, dynamic_
                         ymin = int(ymin * original_shape[0] / 640)
                         ymax = int(ymax * original_shape[0] / 640)
 
-                        # Verifica se o bounding box toca no limite superior ou inferior
-                        if ymin < dynamic_margin or ymax > frame_resized.shape[0] - dynamic_margin:  # 5px de margem
-                            continue  # Ignora se o bounding box toca nas bordas da imagem
+                        # Verifica se o bounding box toca nas bordas superiores/inferiores com dynamic_margin
+                        if ymin < dynamic_margin or ymax > original_shape[0] - dynamic_margin:
+                            continue  # Ignora se o bounding box toca nas bordas superior ou inferior
+
+                        # Verifica se o bounding box toca nas bordas laterais com lateral_margin
+                        if xmin < lateral_margin or xmax > original_shape[1] - lateral_margin:
+                            continue  # Ignora se o bounding box toca nas bordas laterais
 
                         valid_detection = True
                         cv2.rectangle(best_frame, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)  # Desenha a bbox
@@ -65,27 +68,22 @@ def process_frames(inputs_png, inputs_csv, output_base_dir, model_path, dynamic_
             if valid_detection:
                 detected_frames.append((png_path, best_frame))
         
-        # Se menos de 5 frames forem detectados, não salva nada
         if len(detected_frames) < 5:
             continue
         
-        # Seleciona entre 2 a 7 ou até o final
         if len(detected_frames) >= 10:
             selected_frames = [detected_frames[i] for i in [2, 3, 4, 5, 6, 7]]
         else:
             selected_frames = detected_frames[2:]
         
-        # Salva os frames selecionados
         for frame_path, best_frame in selected_frames:
             frame_name = os.path.basename(frame_path)
             output_path = os.path.join(output_dir_pngs, frame_name)
             output_best_path = os.path.join(output_dir_best, frame_name)
             
-            # Salva as imagens PNG
             cv2.imwrite(output_path, cv2.imread(frame_path))
             cv2.imwrite(output_best_path, best_frame)
             
-            # Copia os arquivos CSV correspondentes
             csv_name = frame_name.replace(".png", ".csv")
             csv_source = os.path.join(input_csv_dir, csv_name)
             csv_dest = os.path.join(output_dir_csvs, csv_name)
