@@ -2,3 +2,4 @@ checkpoints
 output
 __pycache__/
 *.pyc
+scripts/trains/regression
