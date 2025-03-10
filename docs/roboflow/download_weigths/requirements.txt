@@ -1,0 +1,4 @@
+inference
+matplotlib
+opencv-python
+supervision

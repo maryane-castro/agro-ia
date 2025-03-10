@@ -1,3 +1,0 @@
-import modelo yolo para cá
-
-best.pt
